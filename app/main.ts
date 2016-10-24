@@ -2,11 +2,17 @@
 import { platformNativeScriptDynamic, NativeScriptModule } from "nativescript-angular/platform";
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
+import {HttpModule} from "@angular/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [AppComponent],
     bootstrap: [AppComponent],
-    imports: [NativeScriptModule],
+    imports: [
+        NativeScriptModule,
+        HttpModule,
+        FormsModule,
+    ],
 })
 class AppComponentModule {}
 

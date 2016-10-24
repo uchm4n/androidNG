@@ -1,10 +1,7 @@
 <StackLayout>
+
     <Label [text]="message" class="title message" textWrap="true"></Label>
-
-    <Button *ngIf="counter!=0" text="თაფ-თაფ" (tap)="onTap()"></Button>
-    <Button *ngIf="counter==0" text="Reset" (tap)="reset()"></Button>
-
-
-
+    <br>
+    <Button text="Norris-თაფ" (tap)="onTap()"></Button>
 
 </StackLayout>
