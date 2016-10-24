@@ -5,15 +5,19 @@ import {Component} from "@angular/core";
     templateUrl: "app.component.html",
 })
 export class AppComponent {
-    public counter: number = 16;
+    public counter: number = 15;
     public get message(): string {
         if (this.counter > 0) {
-            return this.counter + " taps left";
+            return "დარჩა " + this.counter + " თაფი";
         } else {
-            return "Hoorraaay! \nYou are ready to start building!";
+            return "იდი ნახუი ეხლა \n გეყო ამდენი კლიკი ბლია!";
         }
     }
     public onTap() {
         this.counter--;
+    }
+
+    public reset(){
+        this.counter = 15;
     }
 }

@@ -1,7 +1,10 @@
 <StackLayout>
-    <Label text="Tap the button" class="title"></Label>
-    
-    <Button text="TAP" (tap)="onTap()"></Button>
+    <Label [text]="message" class="title message" textWrap="true"></Label>
 
-    <Label [text]="message" class="message" textWrap="true"></Label>
+    <Button *ngIf="counter!=0" text="თაფ-თაფ" (tap)="onTap()"></Button>
+    <Button *ngIf="counter==0" text="Reset" (tap)="reset()"></Button>
+
+
+
+
 </StackLayout>
