@@ -1,23 +1,27 @@
 import {Component} from "@angular/core";
-var http = require("http");
+import {Router} from "@angular/router";
+import {NewsService} from "./services/news.service";
+import {News} from "./shared/news";
 
 
 @Component({
     selector: "my-app",
     templateUrl: "app.component.html",
+    styleUrls: ["app.component.css"],
+    providers:[NewsService]
 })
-export class AppComponent{
+export class AppComponent {
 
-    message;
-    constructor(){}
+    newsList;
+    constructor(private router: Router, news: NewsService) {
+        news.getNews().subscribe(data => {
+            this.newsList = data;
+        })
+    }
 
 
     public onTap() {
-        http.getJSON("http://api.icndb.com/jokes/random")
-            .then(response => {
-                this.message = response.value.joke;
-            });
-
+        this.router.navigate(['/page1']);
     }
 
 }

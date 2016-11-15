@@ -1,7 +1,15 @@
 <StackLayout>
-
-    <Label [text]="message" class="title message" textWrap="true"></Label>
-
-    <Button text="Norris-თაფ" (tap)="onTap()"></Button>
-
+    <GridLayout rows="*">
+        <!-- >> listview-customize-html -->
+        <ListView [items]="newsList" (itemTap)="onTap()" class="list-group">
+            <template let-dataitem="item" let-i="index" let-third="third" let-header="header" let-footer="footer">
+                <GridLayout class="list-group-item">
+                    <Label [text]="dataitem.headline" class="h2 p-15 bold" textWrap="true"></Label>
+                </GridLayout>
+            </template>
+        </ListView>
+        <!-- << listview-customize-html -->
+    </GridLayout>
 </StackLayout>
+
+<page-router-outlet></page-router-outlet>

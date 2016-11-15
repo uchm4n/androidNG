@@ -3,13 +3,19 @@ import { platformNativeScriptDynamic, NativeScriptModule } from "nativescript-an
 import {NgModule, enableProdMode} from "@angular/core";
 import { AppComponent } from "./app.component";
 import {HttpModule} from "@angular/http";
+import {NativeScriptHttpModule} from "nativescript-angular/http";
 import {FormsModule} from "@angular/forms";
+import {NativeScriptRouterModule} from "nativescript-angular/router";
+import {appRoutes, appComponents} from "./app.routing";
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent,...appComponents],
     bootstrap: [AppComponent],
     imports: [
         NativeScriptModule,
+        NativeScriptHttpModule,
+        NativeScriptRouterModule,
+        NativeScriptRouterModule.forRoot(appRoutes),
         HttpModule,
         FormsModule,
     ],
