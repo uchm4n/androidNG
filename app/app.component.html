@@ -1,9 +1,10 @@
 <StackLayout>
     <GridLayout rows="*">
         <!-- >> listview-customize-html -->
-        <ListView [items]="newsList" (itemTap)="onTap()" class="list-group">
-            <template let-dataitem="item" let-i="index" let-third="third" let-header="header" let-footer="footer">
+        <ListView [items]="newsList" (itemTap)="onTap($event)" class="list-group">
+            <template let-dataitem="item" let-i="index">
                 <GridLayout class="list-group-item">
+
                     <Label [text]="dataitem.headline" class="h2 p-15 bold" textWrap="true"></Label>
                 </GridLayout>
             </template>
@@ -11,5 +12,5 @@
         <!-- << listview-customize-html -->
     </GridLayout>
 </StackLayout>
-
+<ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
 <page-router-outlet></page-router-outlet>

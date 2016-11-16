@@ -1,7 +1,6 @@
 import {Component} from "@angular/core";
-import {Router} from "@angular/router";
+import {Router, NavigationExtras} from "@angular/router";
 import {NewsService} from "./services/news.service";
-import {News} from "./shared/news";
 
 
 @Component({
@@ -13,15 +12,25 @@ import {News} from "./shared/news";
 export class AppComponent {
 
     newsList;
+    isLoading: boolean = false;
     constructor(private router: Router, news: NewsService) {
+        this.isLoading = true;
         news.getNews().subscribe(data => {
             this.newsList = data;
+            this.isLoading = false;
         })
     }
 
 
-    public onTap() {
-        this.router.navigate(['/page1']);
+    public onTap(item: any) {
+        this.isLoading = true;
+        let navExtras: NavigationExtras = {
+            queryParams:{
+                "data" : item.item
+            }
+        }
+
+        this.router.navigate(['/page1'],navExtras);
     }
 
 }

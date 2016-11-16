@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {News} from "../../shared/news";
 
 @Component({
     selector: "page1",
@@ -7,10 +8,17 @@ import {Router} from "@angular/router";
 })
 export class Page1Component{
 
-    constructor(private route:Router){}
+
+    public data:any;
+
+    constructor(private route:ActivatedRoute,private router: Router){
+        this.route.queryParams.subscribe(params => {
+            this.data = params['data'];
+        });
+    }
 
     onTap(){
-        this.route.navigate(['']);
+        this.router.navigate(['']);
     }
 }
 
