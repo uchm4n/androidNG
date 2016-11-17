@@ -4,7 +4,7 @@
         <ListView [items]="newsList" (itemTap)="onTap($event)" class="list-group">
             <template let-dataitem="item" let-i="index">
                 <StackLayout [class.odd]="odd" [class.even]="even">
-                    <Label [text]="dataitem.headline" class="h2 p-15 bold" textWrap="true"></Label>
+                    <Label [text]="dataitem.headline" class="h3 p-15 bold" textWrap="true"></Label>
                 </StackLayout>
             </template>
         </ListView>

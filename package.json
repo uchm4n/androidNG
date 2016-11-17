@@ -1,7 +1,7 @@
 {
-  "description": "NativeScript Application",
+  "description": "News Application",
   "license": "SEE LICENSE IN <your-license-filename>",
-  "readme": "NativeScript Application",
+  "readme": "News Application",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
     "id": "org.nativescript.androidNG",
