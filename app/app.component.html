@@ -1,16 +1,18 @@
-<StackLayout>
-    <GridLayout rows="*">
+<GridLayout rows="*">
+    <PullToRefresh (refresh)="refreshList($event)">
         <!-- >> listview-customize-html -->
         <ListView [items]="newsList" (itemTap)="onTap($event)" class="list-group">
             <template let-dataitem="item" let-i="index">
-                <GridLayout class="list-group-item">
-
+                <StackLayout [class.odd]="odd" [class.even]="even">
                     <Label [text]="dataitem.headline" class="h2 p-15 bold" textWrap="true"></Label>
-                </GridLayout>
+                </StackLayout>
             </template>
         </ListView>
         <!-- << listview-customize-html -->
-    </GridLayout>
-</StackLayout>
-<ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
+    </PullToRefresh>
+</GridLayout>
+
+
+<ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center"
+                   verticalAlignment="center"></ActivityIndicator>
 <page-router-outlet></page-router-outlet>

@@ -19,6 +19,8 @@
     "@angular/platform-browser-dynamic": "2.1.0",
     "@angular/router": "3.1.0",
     "nativescript-angular": "1.1.0",
+    "nativescript-pulltorefresh": "^1.1.8",
+    "nativescript-theme-core": "^0.2.1",
     "reflect-metadata": "~0.1.8",
     "tns-core-modules": "2.3.0"
   },

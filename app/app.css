@@ -21,4 +21,13 @@ button {
     color: #284848;
     text-align: center;
     margin: 0 20;
-} 
+}
+
+
+.odd {
+    background-color: lightgrey;
+}
+
+.even {
+    background-color: darkgray;
+}

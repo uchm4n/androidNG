@@ -8,3 +8,12 @@
     font-size: 15;
     text-wrap: normal;
 }
+
+
+.odd {
+    background-color: lightgrey;
+}
+
+.even {
+    background-color: darkgray;
+}
