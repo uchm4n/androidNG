@@ -27,7 +27,7 @@ export class AppComponent {
         this.isLoading = true;
         let navExtras: NavigationExtras = {
             queryParams:{
-                "data" : item.item
+                "data" : item
             }
         }
 
