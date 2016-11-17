@@ -1,9 +1,16 @@
 <ActionBar title="Details" icon="ic_menu_back">
     <NavigationButton (tap)="onTap()" text="Go Back" android.systemIcon="ic_menu_back"></NavigationButton>
 </ActionBar>
+<ScrollView>
+    <StackLayout>
+        <Image src="{{item.image||'https://placeholdit.imgix.net/~text?txtsize=20&txt=%E1%83%A1%E1%83%A3%E1%83%A0%E1%83%90%E1%83%97%E1%83%98%E1%83%A1%20%E1%83%92%E1%83%90%E1%83%A0%E1%83%94%E1%83%A8%E1%83%94&w=350&h=350'}}"
+               rowSpan="2" width="350" height="350" margin="3" verticalAlignment="top"></Image>
+        <Label [text]="item.headline" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
+        <Label [text]="item.body_text" textWrap="true" col="1" colSpan="2" minHeight="255" fontSize="18"></Label>
 
-<StackLayout>
-    <Label [text]="data" class="h2 p-15 bold" textWrap="true"></Label>
-</StackLayout>
+        <Label text="Views: {{item.views}} |  Date: {{item.date_str|date}}" col="1" row="1" fontSize="14"  horizontalAlignment="left" verticalAlignment="bottom" margin="5"></Label>
+
+    </StackLayout>
+</ScrollView>
 
 
