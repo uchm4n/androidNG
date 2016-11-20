@@ -2,6 +2,7 @@ import {Component} from "@angular/core";
 import {Router, NavigationExtras} from "@angular/router";
 import {NewsService} from "./services/news.service";
 import { registerElement } from "nativescript-angular/element-registry";
+let application = require('application');
 registerElement("PullToRefresh", () => require("nativescript-pulltorefresh").PullToRefresh);
 
 @Component({
@@ -16,6 +17,10 @@ export class AppComponent {
     isLoading: boolean = false;
     constructor(private router: Router, public news: NewsService) {
         this.isLoading = true;
+        application.android.on(application.AndroidApplication.activityBackPressedEvent, function (args) {
+            return this.isLoading = false;
+        });
+
         this.news.getNews().subscribe(data => {
             this.newsList = data;
             this.isLoading = false;
