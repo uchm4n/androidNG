@@ -28,6 +28,7 @@ export class AppComponent {
     }
 
 
+
     public onTap(item: any) {
         this.isLoading = true;
         let navExtras: NavigationExtras = {
