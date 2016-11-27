@@ -22,7 +22,7 @@
     "nativescript-dialog": "0.0.8",
     "nativescript-pulltorefresh": "^1.1.8",
     "nativescript-sqlite": "^1.1.2",
-    "nativescript-theme-core": "^0.2.1",
+    "nativescript-theme-core": "^0.2.6",
     "nativescript-touchid": "^2.1.1",
     "reflect-metadata": "~0.1.8",
     "tns-core-modules": "2.3.0"

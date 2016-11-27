@@ -1,9 +1,9 @@
 <GridLayout rows="*">
     <PullToRefresh (refresh)="refreshList($event)">
         <!-- >> listview-customize-html -->
-        <ListView  [items]="newsList">
+        <ListView  [items]="newsList" class="list-group">
             <template let-item="item" let-i="index" >
-                <GridLayout (tap)="onTap(item)" columns="auto, *, auto" rows="auto, 25" verticalAlignment="top" backgroundColor="#f6f9fb">
+                <GridLayout (tap)="onTap(item)" class="list-group-item" columns="auto, *, auto" rows="auto, 25" verticalAlignment="top" backgroundColor="#f6f9fb">
                     <Image src="{{item.image||'https://placeholdit.imgix.net/~text?txtsize=20&txt=%E1%83%A1%E1%83%A3%E1%83%A0%E1%83%90%E1%83%97%E1%83%98%E1%83%A1%20%E1%83%92%E1%83%90%E1%83%A0%E1%83%94%E1%83%A8%E1%83%94&w=150&h=150'}}" rowSpan="2" width="150" height="150" margin="3" verticalAlignment="top"></Image>
                     <Label [text]="item.headline" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
                     <Label text="Views: {{item.views}} |  Date: {{item.date_str|date}}" col="1" row="1" fontSize="14"  horizontalAlignment="left" verticalAlignment="bottom" margin="5"></Label>
@@ -15,6 +15,6 @@
 </GridLayout>
 
 
-<ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center"
+<ActivityIndicator class="activity-indicator" [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center"
                    verticalAlignment="center"></ActivityIndicator>
 <page-router-outlet></page-router-outlet>
