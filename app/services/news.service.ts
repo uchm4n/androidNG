@@ -6,7 +6,7 @@ import {News} from "../shared/news";
 @Injectable()
 export class NewsService {
 
-    private newsUrl = 'http://net.adjara.com/NewsRSS/getNews.php?categories=&sources=&types=&order=recent&page=1&date=false';  // URL to web API
+    private newsUrl = 'http://net.adjara.com/NewsRSS/getNews.php?categories=&sources=&types=&order=recent&date=false';  // URL to web API
     constructor (private http: Http) {}
 
     getNews(): Observable<News[]> {
@@ -15,6 +15,11 @@ export class NewsService {
             .catch(this.handleError);
     }
 
+    nextPage(page:number): Observable<News[]>{
+        return this.http.get(this.newsUrl + '&page=' + page)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
 
     private extractData(res: Response) {
         let body = res.json();
